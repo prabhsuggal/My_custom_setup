@@ -1,4 +1,5 @@
 #!/bin/bash
+#backup some repos on github
 
 cd ~/Desktop/C-Code && ./git.run
 cd ~/Downloads/Pictures && ./git.run
