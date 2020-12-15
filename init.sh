@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Doing Git things which are useful
+# would be good to ask for user option
+# But doesn't seem to be affecting currently
+ln -s ~/My_custom_setup/git_files/.gitconfig ~/.gitconfig
+ln -s ~/My_custom_setup/git_files/.gitignore ~/.gitignore
+
 while true; do
     read -p "Do you wish to install vimrc for this system?[y/n]" yn
     case $yn in
