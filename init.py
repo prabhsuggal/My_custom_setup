@@ -27,14 +27,16 @@ def maybe_complete_command(cmd, valid_input, prompt):
 
 def add_symlink(src_file, target_file):
   src = Path(src_file)
-  if src.is_file():
+  print(src.is_file(), src.is_symlink())
+  if src.is_file() or src.is_symlink():
     cmd = ["rm " + src_file, 'head ' + src_file]
     valid_input = ["y", "n"]
     prompt = src_file + " exists. Do you want to delete it?[y/n]"
     maybe_complete_command(cmd, valid_input, prompt)
     if src.is_file():
       return
-  subprocess.Popen(['ln', '-s', target_file, src_file])
+  process = subprocess.Popen(['ln', '-s', target_file, src_file])
+  return_code = process.wait()
 
 def complete_fpath(fname):
   return os.path.expanduser(fname)
@@ -75,7 +77,7 @@ def main():
   add_symlink(complete_fpath("~/.gitignore"),
               complete_fpath("~/My_custom_setup/git_files/.gitignore"))
   add_symlink(complete_fpath("~/.bashrc"),
-              complete_fpath("~/My_custom_setup/bash_scripts/bashrc"))
+              complete_fpath("~/My_custom_setup/bash_init/bashrc"))
   # Add ssh keys if not present
   add_ssh_keys()
 
