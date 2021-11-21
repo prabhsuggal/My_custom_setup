@@ -74,7 +74,8 @@ def main():
               complete_fpath("~/My_custom_setup/git_files/.gitconfig"))
   add_symlink(complete_fpath("~/.gitignore"),
               complete_fpath("~/My_custom_setup/git_files/.gitignore"))
-
+  add_symlink(complete_fpath("~/.bashrc"),
+              complete_fpath("~/My_custom_setup/bash_scripts/bashrc"))
   # Add ssh keys if not present
   add_ssh_keys()
 
