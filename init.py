@@ -27,7 +27,6 @@ def maybe_complete_command(cmd, valid_input, prompt):
 
 def add_symlink(src_file, target_file):
   src = Path(src_file)
-  print(src.is_file(), src.is_symlink())
   if src.is_file() or src.is_symlink():
     cmd = ["rm " + src_file, 'head ' + src_file]
     valid_input = ["y", "n"]
