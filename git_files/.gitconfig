@@ -4,5 +4,5 @@
 	name = Prabhsimrandeep Singh
 	email = psuggal@gmail.com
 [core]
-	excludesfile = /Users/prabhsimrans/.gitignore
+	excludesfile = ~/.gitignore
 	editor = vim
